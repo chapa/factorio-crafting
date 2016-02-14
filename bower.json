@@ -1,0 +1,36 @@
+{
+  "name": "factorio-crafting",
+  "version": "0.0.0",
+  "description": "A set of tools related to crafting in factorio, the video game",
+  "homepage": "https://chapa.github.io/factorio-crafting",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chapa/factorio-crafting.git"
+  },
+  "authors": [
+    "Mickaël Bourgier <mickael.bourgier@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "main": "src/app.js",
+  "moduleType": "amd",
+  "keywords": [
+    "factorio",
+    "crafting"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.0",
+    "angular-bootstrap": "^1.1.2",
+    "angular-ui-router": "^0.2.18",
+    "bootstrap": "^3.3.6",
+    "d3": "^3.5.15",
+    "requirejs": "^2.1.22"
+  }
+}
