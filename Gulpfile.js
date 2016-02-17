@@ -146,6 +146,11 @@
      * Build dist/index.html file from src/index.html
      */
     function buildIndexTask (disableHTML5Urls, disableFMOG, FMOGUrl) {
+        var analytics = '';
+        try {
+            analytics = '<script>' + fs.readFileSync('analytics.js').toString() + '</script>';
+        } catch (e) {}
+
         return gulp.src('src/index.html')
             .pipe(htmlReplace({
                 urlBase: disableHTML5Urls ? '' : '<base href="/">',
@@ -153,7 +158,8 @@
                 templates: fs.readFileSync(
                     'dist/templates.html'
                 ).toString(),
-                bootstrap: '<script type="text/javascript" src="lib/require.js"></script><script type="text/javascript" src="app.min.js"></script>'
+                bootstrap: '<script type="text/javascript" src="lib/require.js"></script><script type="text/javascript" src="app.min.js"></script>',
+                analytics: analytics
             }))
             .pipe(replace(/css\/app\.css/g, 'app.min.css'))
             .pipe(replace(/bower_components\/((?!css"|js").)+\//g, 'lib/'))
